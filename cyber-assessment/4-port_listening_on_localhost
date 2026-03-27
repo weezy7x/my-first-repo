@@ -1,2 +1,2 @@
-#!/bin/bash
-ss -tlnp 2>/dev/null | grep LISTEN | awk '{print $4}' | cut -d: -f2 | sort -u
+#!/usr/bin/env bash
+nc -l localhost 98
