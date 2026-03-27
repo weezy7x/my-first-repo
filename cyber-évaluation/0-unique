@@ -1,0 +1,2 @@
+#!/bin/bash
+sort | uniq -c | while read c w; do [ "$c" = "1" ] && echo "$w"; done
