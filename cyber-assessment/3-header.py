@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+import urllib.request
 import sys
-name = sys.argv[1] if len(sys.argv) > 1 else "Header"
-width = len(name) + 4
-print("*" * (width + 2))
-print(f"* {name} *")
-print("*" * (width + 2))
+
+with urllib.request.urlopen(sys.argv[1]) as response:
+    print(response.headers.get('X-Request-Id'))
