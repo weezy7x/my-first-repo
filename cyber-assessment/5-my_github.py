@@ -1,5 +1,14 @@
-#!/usr/bin/env python3
-print("GitHub Username: weezy7x")
-print("Repository: my-first-repository")
-print("Directory: cyber-assessment")
-print("Full URL: https://github.com/weezy7x/my-first-repository/tree/main/my-first-project/cyber-assessment")
+#!/usr/bin/python3
+import requests
+import sys
+
+username = sys.argv[1]
+token = sys.argv[2]
+
+url = "https://api.github.com/user"
+response = requests.get(url, auth=(username, token))
+
+try:
+    print(response.json().get('id'))
+except:
+    print("None")
